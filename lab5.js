@@ -58,6 +58,13 @@ const Lab5 = (app) => {
     app.get("/a5/todos/:id/delete", (req, res) => {
         const { id } = req.params;
         const todo = todos.find((t) => t.id === parseInt(id));
+        if (!todo) {
+            res.res
+              .status(404)
+              .json({ message:
+                `Unable to update Todo with ID ${id}` });
+            return;
+        }
         todos.splice(todos.indexOf(todo), 1);
         res.json(todos);
     });
@@ -65,6 +72,13 @@ const Lab5 = (app) => {
     app.get("/a5/todos/:id/title/:title", (req, res) => {
         const { id, title } = req.params;
         const todo = todos.find((t) => t.id === parseInt(id));
+        if (!todo) {
+            res.res
+              .status(404)
+              .json({ message:
+                `Unable to update Todo with ID ${id}` });
+            return;
+        }
         todo.title = title;
         res.json(todos);
     });
@@ -72,6 +86,13 @@ const Lab5 = (app) => {
     app.get("/a5/todos/:id/description/:description", (req, res) => {
         const { id, description } = req.params;
         const todo = todos.find((t) => t.id === parseInt(id));
+        if (!todo) {
+            res.res
+              .status(404)
+              .json({ message:
+                `Unable to update Todo with ID ${id}` });
+            return;
+        }
         todo.description = description;
         res.json(todos);
     });
@@ -79,6 +100,13 @@ const Lab5 = (app) => {
     app.get("/a5/todos/:id/status/:status", (req, res) => {
         const { id, status } = req.params;
         const todo = todos.find((t) => t.id === parseInt(id));
+        if (!todo) {
+            res.res
+              .status(404)
+              .json({ message:
+                `Unable to update Todo with ID ${id}` });
+            return;
+        }
         todo.completed = status;
         res.json(todos);
     });
@@ -106,6 +134,13 @@ const Lab5 = (app) => {
     app.get("/a5/todos/:id", (req, res) => {
         const { id } = req.params;
         const todo = todos.find((t) => t.id === parseInt(id));
+        if (!todo) {
+            res.res
+              .status(404)
+              .json({ message:
+                `Unable to update Todo with ID ${id}` });
+            return;
+        }
         res.json(todo);
     });
 
