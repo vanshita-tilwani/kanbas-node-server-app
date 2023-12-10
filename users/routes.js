@@ -1,5 +1,6 @@
 import * as dao from "./dao.js";
 function UserRoutes(app) {
+  
   const createUser = async (req, res) => {
     const user = await dao.createUser(req.body);
     res.json(user);
@@ -43,10 +44,12 @@ function UserRoutes(app) {
     req.session['currentUser'] = currentUser;
     res.json(currentUser);
   };
+
   const signout = (req, res) => {
     req.session.destroy();
     res.json(200);
   };
+
   const account = async (req, res) => {
     res.json(req.session['currentUser']);
   };
