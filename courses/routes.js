@@ -1,4 +1,3 @@
-import Database from "../database/index.js";
 import * as dao from "./dao.js";
 function CourseRoutes(app) {
 
