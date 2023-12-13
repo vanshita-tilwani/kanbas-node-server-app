@@ -4,5 +4,5 @@ const modulesSchema = new mongoose.Schema({
     description: {type: String, required: true},
     course: { type: String, required: true },
   },
-  { collection: "modules" });
+  { collection: "modules", versionKey: false });
 export default modulesSchema;

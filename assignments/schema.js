@@ -3,5 +3,5 @@ const assignmentsSchema = new mongoose.Schema({
     title: { type: String, required: true },
     course: { type: String, required: true },
   },
-  { collection: "assignments" });
+  { collection: "assignments" , versionKey: false});
 export default assignmentsSchema;

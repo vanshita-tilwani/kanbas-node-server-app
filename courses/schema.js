@@ -7,5 +7,5 @@ const courseSchema = new mongoose.Schema({
     credits: {type : Number, required : true},
     description: String,
   },
-  { collection: "courses" });
+  { collection: "courses", versionKey: false });
 export default courseSchema;

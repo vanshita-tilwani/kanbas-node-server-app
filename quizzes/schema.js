@@ -12,5 +12,5 @@ const quizSchema = new mongoose.Schema({
     availableFrom: {type:Date, required : true},
     availableUntil: {type:Date},
   },
-  { collection: "quiz" });
+  { collection: "quiz", versionKey: false });
 export default quizSchema;
