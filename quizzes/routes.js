@@ -51,7 +51,7 @@ function QuizRoutes(app) {
 
   app.delete("/api/quiz/question/:qid", async(req, res) => {
     const { qid } = req.params;
-    const status = await questionDao.deleteQuizQuestion(qid, question);
+    const status = await questionDao.deleteQuizQuestion(qid);
     res.json(status);
   });
 
